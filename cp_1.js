@@ -17,16 +17,16 @@ nameInput.addEventListener("input", () =>{
 });
 
 // Display tooltips on field mouseover and hide on mouseout
-const fields = document.querySelectorAll("input");
+const fields = document.querySelectorAll("input, textarea");
 const tooltip = document.getElementById("tooltip");
 
 function showTooltip(field) {
-  tooltip.style.display = "block";
-  tooltip.textContent = "Type Here";
+    tooltip.textContent = "Type Here";
+    tooltip.classList.add("visible");
 }
 
 function hideTooltip() {
-     tooltip.style.display = "none"
+    tooltip.classList.remove("visible");
 }
 
 fields.forEach(field => {
@@ -47,9 +47,8 @@ form.addEventListener("submit", (e) => {
     if (!userName || !email || !comments) {
         alert("All fields required.");
         return;
-    } else {
-        alert("Thank you for your submission!")
-    }
+    };
+    
 // Dynamically append valid feedback entries to a <div id="feedback-display"> container
 const feedbackDisplay = document.getElementById("feedback-display");
 const entry = document.createElement("p")

@@ -12,12 +12,13 @@
             <div id="userInfo">
                 <label for="userName">User Name</label>
                 <input type="text" id="userName">
-               
+                <div class="tooltip">Type here</div>
             </div>
 
             <div id="emailInfo">
                 <label for="email">Email</label>
                 <input type="text" id="email">
+                <div class="tooltip">Type here</div>
         
             </div>
 
@@ -25,16 +26,16 @@
                 <label for="comments">Comments</label>
                 <textArea id="comments" rows="4" maxlength="100"></textArea>
                 <button id="pressBtn">Submit</button>
+                <div class="tooltip">Type here</div>
             </form>
 
-            <div id="tooltip" class="tooltip"></div>
-
             <div id="feedback-display">
-                <label for="feedback">Submitted Feedback</label>
-                <p></p>
+                <h3>Submitted Feedback</h3>
+            
             </div>
         </center>
     </header>
+   <div id="tooltip" class="tooltip"></div> 
     <script src="cp_1.js"></script>
 </body>
 </html>
