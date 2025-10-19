@@ -34,3 +34,13 @@ fields.forEach(field => {
   field.addEventListener("mouseout", () => hideTooltip());
   tooltip.textContent = "Type Here";
 });
+
+// Prevent submission if fields are empty, showing validation messages
+const form = document.getElementById("surveyForm");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!userName || !email || !comments) {
+        alert("All fields required.");
+        return;
+    }
+});
