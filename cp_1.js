@@ -15,3 +15,21 @@ emailInput.addEventListener("input", () => {
 nameInput.addEventListener("input", () =>{
     console.log("Characters:", nameInput.value.length)
 });
+
+// Display tooltips on field mouseover and hide on mouseout
+const fields = document.querySelectorAll("input");
+
+function showTooltip(field) {
+  const tooltip = document.getElementById("tooltip");
+  tooltip.style.display = "block";
+}
+
+function hideTooltip() {
+    const tooltip = document.getElementById("tooltip");
+     tooltip.style.display = "none"
+}
+
+fields.forEach(field => {
+  field.addEventListener("mouseover", () => showTooltip(field));
+  field.addEventListener("mouseout", () => hideTooltip());
+});
