@@ -60,3 +60,11 @@ nameInput.value = "";
 emailInput.value = "";
 commentsInput.value = "";
 });
+
+// Step 4 & 5 - Use event bubbling and delegation to manage events from all input fields & Prevent background clicks from triggering form-related events using stopPropagation()
+document.querySelector("header").addEventListener("click", (e) => {
+    if (e.target.matches("input, textarea")) {
+        console.log("Interacting with:", e.target.id);
+        e.stopPropagation();
+    }
+});
