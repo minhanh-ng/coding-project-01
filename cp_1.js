@@ -32,4 +32,5 @@ function hideTooltip() {
 fields.forEach(field => {
   field.addEventListener("mouseover", () => showTooltip(field));
   field.addEventListener("mouseout", () => hideTooltip());
+  tooltip.textContent = "Type Here";
 });
