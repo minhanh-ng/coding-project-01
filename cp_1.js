@@ -22,6 +22,7 @@ const fields = document.querySelectorAll("input");
 function showTooltip(field) {
   const tooltip = document.getElementById("tooltip");
   tooltip.style.display = "block";
+  tooltip.textContent = "Type Here";
 }
 
 function hideTooltip() {
@@ -32,15 +33,21 @@ function hideTooltip() {
 fields.forEach(field => {
   field.addEventListener("mouseover", () => showTooltip(field));
   field.addEventListener("mouseout", () => hideTooltip());
-  tooltip.textContent = "Type Here";
+  
 });
 
 // Prevent submission if fields are empty, showing validation messages
 const form = document.getElementById("surveyForm");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    const userName = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const comments = commentsInput.value.trim();
+
     if (!userName || !email || !comments) {
         alert("All fields required.");
         return;
+    } else {
+        alert("Thank you for your submission!")
     }
 });
