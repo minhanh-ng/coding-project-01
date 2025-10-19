@@ -18,15 +18,14 @@ nameInput.addEventListener("input", () =>{
 
 // Display tooltips on field mouseover and hide on mouseout
 const fields = document.querySelectorAll("input");
+const tooltip = document.getElementById("tooltip");
 
 function showTooltip(field) {
-  const tooltip = document.getElementById("tooltip");
   tooltip.style.display = "block";
   tooltip.textContent = "Type Here";
 }
 
 function hideTooltip() {
-    const tooltip = document.getElementById("tooltip");
      tooltip.style.display = "none"
 }
 
@@ -38,6 +37,7 @@ fields.forEach(field => {
 
 // Prevent submission if fields are empty, showing validation messages
 const form = document.getElementById("surveyForm");
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const userName = nameInput.value.trim();
@@ -50,4 +50,13 @@ form.addEventListener("submit", (e) => {
     } else {
         alert("Thank you for your submission!")
     }
+// Dynamically append valid feedback entries to a <div id="feedback-display"> container
+const feedbackDisplay = document.getElementById("feedback-display");
+const entry = document.createElement("p")
+entry.textContent = `${userName} (${email}): ${comments}`;
+feedbackDisplay.appendChild(entry);
+
+nameInput.value = "";
+emailInput.value = "";
+commentsInput.value = "";
 });
